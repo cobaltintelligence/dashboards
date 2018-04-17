@@ -44,7 +44,8 @@ server <- function(input, output) {
       hist(x, breaks = bins, col = 'darkgray', border = 'white')
    })
 }
-
+options(shiny.port = 3838)
+options(shiny.host = "0.0.0.0")
 # Run the application 
 shinyApp(ui = ui, server = server)
 
