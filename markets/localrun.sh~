@@ -1,0 +1,4 @@
+#!/bin/localrun.sh
+cp ~/dev/data/explore/out ./out
+Rscript app.R
+echo "============ DONE ============"
