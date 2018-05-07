@@ -1,7 +1,9 @@
 # install_packages.R
 
 packages <- c(
-	'shiny'
+	'shiny',
+	'shinythemes',
+	'dygraphs'
 )
 
 hard_packages <- c(
