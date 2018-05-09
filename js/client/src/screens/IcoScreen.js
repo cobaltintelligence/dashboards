@@ -73,6 +73,10 @@ const cobaltBlue = (opacity) => {
   return 'rgba(0, 0, 153,' + opacity + ')'
 }
 
+const green = (opacity) => {
+  return 'rgba(40, 163, 134,' + opacity + ')'
+}
+
 export default class IcoScreen extends Component {
 
   constructor(props) {
@@ -80,7 +84,7 @@ export default class IcoScreen extends Component {
     this.state = {
       upcoming: [],
       news: [],
-      keyword: 'bitcoin'
+      keyword: 'Kasko2go'
     }
     // this.setState = this.setState.bind(this)
     autoBind(this);
@@ -142,17 +146,21 @@ export default class IcoScreen extends Component {
                   style={{
                     ...styles.icoBox,
                     ...{
-                      backgroundColor: this.state.keyword == item.name ? cobaltBlue(0.2) : cobaltBlue(0)
+                      backgroundColor: this.state.keyword == item.name ? cobaltBlue(0.2) : cobaltBlue(1)
                     }
                   }}
                   key={item.name}
                   style={styles.icoLink}
                   href="#"
                   onClick={()=>this.changeKeyword(item.name)}>
-                  <p style={styles.p}>
+                  <p style={{
+                    ...styles.p,
+                    ...{color: this.state.keyword == item.name ? green(0.5) : cobaltBlue(0.5)}}}>
                     {moment(item.end_time).format('MMM Do')}
                   </p>
-                  <h3 style={styles.h3}>
+                  <h3 style={{
+                    ...styles.h3,
+                    ...{color: this.state.keyword == item.name ? green(1) : cobaltBlue(1)}}}>
                     {item.name}
                   </h3>
                 </a>
@@ -165,7 +173,7 @@ export default class IcoScreen extends Component {
           ...styles.col, 
           ...{flex: 3}}}>
           <h1>
-            Insights
+            Toolkit
           </h1>
           {hline()}
           <br/>
@@ -214,7 +222,7 @@ export default class IcoScreen extends Component {
                   style={{
                     ...styles.icoBox,
                     ...{
-                      backgroundColor: this.state.keyword == item.name ? cobaltBlue(0.2) : cobaltBlue(0)
+                      backgroundColor: cobaltBlue(0.2)
                     }
                   }}
                   key={item.url}
@@ -262,6 +270,7 @@ let styles = {
     alignItems: 'flex-start',
     display: 'flex',
     margin: 10,
+    flex: 0,
     padding: 5,
   },
   h3: {
