@@ -55,11 +55,11 @@ const fetchNews = (topic, callback) => {
   })
 }
 
-const hline = () => {
+const hline = (color) => {
   return (
     <div 
       style={{
-        backgroundColor: 'black', 
+        backgroundColor: color, 
         flex: 1,
         display: 'flex',
         minHeight: 2,
@@ -136,7 +136,7 @@ export default class IcoScreen extends Component {
           <h1>
             Upcoming ICOs
           </h1>
-          {hline()}
+          {hline('black')}
           <br/>
 
           {
@@ -175,7 +175,7 @@ export default class IcoScreen extends Component {
           <h1 style={{color: green(1)}}>
             {this.state.keyword}
           </h1>
-          {hline()}
+          {hline(green(1))}
           <br/>
 
           <h3>
