@@ -8,7 +8,8 @@ var async = require('async')
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 const fetchTrends = (keywords, callback) => {
   var optionsObject = {
