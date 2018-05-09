@@ -172,8 +172,8 @@ export default class IcoScreen extends Component {
         <div style={{
           ...styles.col, 
           ...{flex: 3}}}>
-          <h1>
-            Toolkit
+          <h1 style={{color: green(1)}}>
+            {this.state.keyword}
           </h1>
           {hline()}
           <br/>
